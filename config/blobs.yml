@@ -1,7 +1,6 @@
-luna-hsm-client-7.3/luna-hsm-client-7.3.tgz:
-  size: 21694791
-  object_id: d99d3677-9d0b-435d-7572-4fe7f4c3ed53
-  sha: c56a24cf026d2cb15983b54d4120f4ba10faf87c
+luna-hsm-client-7.4/luna-hsm-client-7.4.tar:
+  size: 40878080
+  sha: sha256:7df1df90738778437a545ca2b0fb1427ab302503791d329946ab36edd5f07ec4
 openjdk_1.8.0/openjdk-1.8.0_192.tar.gz:
   size: 45305426
   object_id: c2c75d99-be9f-43a2-794a-2e2c1c994fba

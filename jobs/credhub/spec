@@ -48,7 +48,7 @@ templates:
 
 packages:
 - openjdk_1.8.0
-- luna-hsm-client-7.3
+- luna-hsm-client-7.4
 - credhub
 
 provides:
