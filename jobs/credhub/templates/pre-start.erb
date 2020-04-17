@@ -2,6 +2,14 @@
 
 set -euo pipefail
 
+LOG_DIR=/var/vcap/sys/log/credhub
+source /var/vcap/jobs/credhub/bin/utils.sh
+
+tee_output_to_sys_log "${LOG_DIR}" "pre-start"
+
+echo '________________________________________________________________________________'
+echo '________________________________________________________________________________' >&2
+
 <% using_hsm = p('credhub.encryption.providers').flatten.any? { |provider| provider['type'] == "hsm" } %>
 <% port = p('credhub.port') %>
 
@@ -41,4 +49,4 @@ mkdir -p /var/vcap/jobs/credhub/tmp
 /var/vcap/jobs/credhub/bin/configure_hsm.sh
 <% end %>
 
-echo 'pre-start finished!'
+printf 'pre-start finished!\n\n\n'

@@ -2,6 +2,14 @@
 
 set -u
 
+LOG_DIR=/var/vcap/sys/log/credhub
+source /var/vcap/jobs/credhub/bin/utils.sh
+
+tee_output_to_sys_log "${LOG_DIR}" "post-start"
+
+echo '________________________________________________________________________________'
+echo '________________________________________________________________________________' >&2
+
 SECONDS=0
 EXPIRATION=600
 
@@ -20,10 +28,10 @@ while [ $SECONDS -lt $EXPIRATION ]; do
     health_check
     if [ $? == 0 ]
     then
-        echo "credhub post start health check successful"
+        printf "credhub post start health check successful\n\n\n"
         exit 0
     fi
     sleep 1
 done
-echo "credhub post start health check failed"
+printf "credhub post start health check failed\n\n\n"
 exit 1
